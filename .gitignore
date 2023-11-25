@@ -2,5 +2,6 @@
 .idea/
 project/
 target/
+resources/
 
 build.sbt
