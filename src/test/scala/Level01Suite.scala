@@ -84,4 +84,21 @@ class Level01Suite extends AnyFreeSpec with Matchers {
       sumOfPrimes(10) shouldEqual 17
     }
   }
+
+  "Largest Product in a Grid" - {
+    "should calculate greatest product of k adjacent numbers in the same direction" in {
+      import Level01.Problem0011.{Grid, calcMaximalGridProduct}
+
+      val grid = Grid(Vector(Vector(1, 2, 3), Vector(4, 1, 1), Vector(1, 0, 1)), 3, 3)
+      calcMaximalGridProduct(grid, 2) shouldEqual 8
+    }
+  }
+
+  "Highly Divisible Triangular Number" - {
+    "should find the value of the first triangle number to have over k divisors" in {
+      import Level01.Problem0012.findTriangleNumber
+
+      findTriangleNumber(5) shouldEqual 28
+    }
+  }
 }
