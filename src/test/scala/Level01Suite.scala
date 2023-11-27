@@ -127,4 +127,12 @@ class Level01Suite extends AnyFreeSpec with Matchers {
       nChooseK(4, 2) shouldEqual 6
     }
   }
+
+  "Power Digit Sum" - {
+    "should calculate the sum of the digits of the number 2 ** n" in {
+      import Level01.Problem0016.powerDigitSum
+
+      powerDigitSum(15) shouldEqual 26
+    }
+  }
 }
