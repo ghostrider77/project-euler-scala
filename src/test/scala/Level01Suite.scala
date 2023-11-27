@@ -119,4 +119,12 @@ class Level01Suite extends AnyFreeSpec with Matchers {
       collatzSequenceLength(13) shouldEqual 10
     }
   }
+
+  "Lattice Paths" - {
+    "should calculate the number of down/right routes on a square grid" in {
+      import Level01.Problem0015.nChooseK
+
+      nChooseK(4, 2) shouldEqual 6
+    }
+  }
 }

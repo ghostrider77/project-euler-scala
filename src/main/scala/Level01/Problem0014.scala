@@ -12,7 +12,7 @@ object Problem0014 {
 
     loop(start, 1)
 
-  def findLongestCollatzSequence(limit: Int): Int =
+  private def findLongestCollatzSequence(limit: Int): Int =
     val (maxN, _): (Int, Int) = (2 until limit).foldLeft((1, 1)){
       case (acc @ (_, maxLength), n) =>
         val length: Int = collatzSequenceLength(n)
