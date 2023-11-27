@@ -101,4 +101,22 @@ class Level01Suite extends AnyFreeSpec with Matchers {
       findTriangleNumber(5) shouldEqual 28
     }
   }
+
+  "Large Sum" - {
+    "should calculate the first ten digits of a sum" in {
+      import Level01.Problem0013.calcLargeSum
+
+      val xs: List[BigInt] = List(BigInt(99), BigInt(89))
+      calcLargeSum(xs, 2) shouldEqual "18"
+
+    }
+  }
+
+  "Longest Collatz Sequence" - {
+    "should find the length of a Collatz-sequence" in {
+      import Level01.Problem0014.collatzSequenceLength
+
+      collatzSequenceLength(13) shouldEqual 10
+    }
+  }
 }
