@@ -135,4 +135,21 @@ class Level01Suite extends AnyFreeSpec with Matchers {
       powerDigitSum(15) shouldEqual 26
     }
   }
+
+  "Maximum Path Sum I" - {
+    "should find the maximum total from top to bottom of a triangle grid" in {
+      import Level01.Problem0018.maxPathSum
+
+      val grid: Vector[Vector[Int]] = Vector(Vector(3), Vector(7, 4), Vector(2, 4, 6), Vector(8, 5, 9, 3))
+      maxPathSum(grid) shouldEqual 23
+    }
+  }
+
+  "1000-digit Fibonacci Number" - {
+    "should find the index of the first term in the Fibonacci sequence to contain k digits" in {
+      import Level01.Problem0025.getIndexOfLargeFibonacciNumber
+
+      getIndexOfLargeFibonacciNumber(3) shouldEqual 12
+    }
+  }
 }
