@@ -154,6 +154,14 @@ class Level01Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Amicable Numbers" - {
+    "should calculate the sum of all the amicable numbers under a given limit" in {
+      import Level01.Problem0021.sumOfAmicableNumbers
+
+      sumOfAmicableNumbers(284) shouldEqual 504
+    }
+  }
+
   "1000-digit Fibonacci Number" - {
     "should find the index of the first term in the Fibonacci sequence to contain k digits" in {
       import Level01.Problem0025.getIndexOfLargeFibonacciNumber
