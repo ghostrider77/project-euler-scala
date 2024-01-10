@@ -145,6 +145,15 @@ class Level01Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Factorial Digit Sum" - {
+    "should find the sum of the digits in the number 100!" in {
+      import Level01.Problem0020.factorialDigitSum
+
+      val n: Int = 10
+      factorialDigitSum(10) shouldEqual 27
+    }
+  }
+
   "1000-digit Fibonacci Number" - {
     "should find the index of the first term in the Fibonacci sequence to contain k digits" in {
       import Level01.Problem0025.getIndexOfLargeFibonacciNumber
