@@ -162,6 +162,14 @@ class Level01Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Names Scores" - {
+    "should calculate the total of all the name scores" in {
+      import Level01.Problem0022.calcNameScores
+
+      calcNameScores(List("COLIN")) shouldEqual 53
+    }
+  }
+
   "1000-digit Fibonacci Number" - {
     "should find the index of the first term in the Fibonacci sequence to contain k digits" in {
       import Level01.Problem0025.getIndexOfLargeFibonacciNumber
