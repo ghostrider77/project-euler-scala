@@ -170,6 +170,16 @@ class Level01Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Non-Abundant Sums" - {
+    "should find the sum of all the positive integers which cannot be written as the sum of two abundant numbers" in {
+      import Level01.Problem0023.sumOfNonAbundantSums
+
+      val expectedSum: Int = 23 * 24 / 2
+      sumOfNonAbundantSums(23) shouldEqual expectedSum
+      sumOfNonAbundantSums(24) shouldEqual expectedSum
+    }
+  }
+
   "1000-digit Fibonacci Number" - {
     "should find the index of the first term in the Fibonacci sequence to contain k digits" in {
       import Level01.Problem0025.getIndexOfLargeFibonacciNumber
