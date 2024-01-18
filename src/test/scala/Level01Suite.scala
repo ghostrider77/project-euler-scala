@@ -180,6 +180,16 @@ class Level01Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Lexicographic Permutations" - {
+    "should calculate the millionth lexicographic permutation of the digits from 0 to 9" in {
+      import Level01.Problem0024.calcNthPermutation
+
+      val n: Int = 5
+      val digits: List[Int] = List(0, 1, 2)
+      calcNthPermutation(n, digits) shouldEqual List(2, 0, 1)
+    }
+  }
+
   "1000-digit Fibonacci Number" - {
     "should find the index of the first term in the Fibonacci sequence to contain k digits" in {
       import Level01.Problem0025.getIndexOfLargeFibonacciNumber
