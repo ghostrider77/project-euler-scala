@@ -10,4 +10,13 @@ class Level02Suite extends AnyFreeSpec with Matchers {
       calcNumberWithLongestRecurringCycle(11) shouldEqual 7
     }
   }
+
+  "Quadratic Primes" - {
+    "should find the quadratic expression that produces the maximum number of primes for consecutive values of n" in {
+      import Level02.Problem0027.calcPolynomicalWithLongestPrimeRun
+
+      val limit: Int = 41
+      math.abs(calcPolynomicalWithLongestPrimeRun(limit)) shouldEqual 41
+    }
+  }
 }
