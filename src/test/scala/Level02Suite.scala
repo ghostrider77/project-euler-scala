@@ -19,4 +19,22 @@ class Level02Suite extends AnyFreeSpec with Matchers {
       math.abs(calcPolynomicalWithLongestPrimeRun(limit)) shouldEqual 41
     }
   }
+
+  "Distinct Powers" - {
+    "should calculate the number of distinct powers a^b where 2 <= a, b <= limit" in {
+      import Level02.Problem0029.distinctPowers
+
+      distinctPowers(5) shouldEqual 15
+    }
+  }
+
+  "Coin Sums" - {
+    "should calculate the number of different ways a 2 pound note can be changed" in {
+      import Level02.Problem0031.coinSums
+
+      val coins: List[Int] = List(5, 2, 1)
+      val amount: Int = 3
+      coinSums(amount, coins) shouldEqual 2
+    }
+  }
 }
