@@ -20,11 +20,27 @@ class Level02Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Number Spiral Diagonals" - {
+    "should calculate the sum of the numbers on the diagonals formed by a spiral" in {
+      import Level02.Problem0028.calcDiagonalSums
+
+      calcDiagonalSums(5) shouldEqual 101
+    }
+  }
+
   "Distinct Powers" - {
     "should calculate the number of distinct powers a^b where 2 <= a, b <= limit" in {
       import Level02.Problem0029.distinctPowers
 
       distinctPowers(5) shouldEqual 15
+    }
+  }
+
+  "Digit Fifth Powers" - {
+    "should find the sum of all the numbers that can be written as the sum of fifth powers of their digits" in {
+      import Level02.Problem0030.calcSumOfDigitPowers
+
+      calcSumOfDigitPowers(4) shouldEqual 19316
     }
   }
 
