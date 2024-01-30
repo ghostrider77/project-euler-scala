@@ -53,4 +53,20 @@ class Level02Suite extends AnyFreeSpec with Matchers {
       coinSums(amount, coins) shouldEqual 2
     }
   }
+
+  "Digit Factorials" - {
+    "should check if a number is the sum of the factorial of its digits" in {
+      import Level02.Problem0034.isFactorialSumOfDigits
+
+      isFactorialSumOfDigits(145) shouldBe true
+    }
+  }
+
+  "Circular Primes" - {
+    "should count the number of circular primes, that is, each circular shift of its digits is a prime below N" in {
+      import Level02.Problem0035.calcNumberOfCircularPrimes
+
+      calcNumberOfCircularPrimes(100) shouldEqual 13
+    }
+  }
 }
