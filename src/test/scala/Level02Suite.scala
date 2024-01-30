@@ -69,4 +69,48 @@ class Level02Suite extends AnyFreeSpec with Matchers {
       calcNumberOfCircularPrimes(100) shouldEqual 13
     }
   }
+
+  "Double-base Palindromes" - {
+    "should find numbers that are palindromic both in base 10 and 2" in {
+      import Level02.Problem0036.isPalindrome
+
+      val n: Int = 585
+      isPalindrome(n, base = 10) shouldBe true
+      isPalindrome(n, base = 2) shouldBe true
+    }
+  }
+
+  "Champernowne's Constant" - {
+    "should find the digits of Champernowne's constant" in {
+      import Level02.Problem0040.champernownesConstantProduct
+
+      champernownesConstantProduct(List(12)) shouldEqual 1
+    }
+  }
+
+  "Distinct Primes Factors" - {
+    "should find the first k consecutive integers to have four distinct prime factors each" in {
+      import Level02.Problem0047.distinctPrimeFactors
+
+      val k: Int = 2
+      distinctPrimeFactors(k) shouldEqual 14
+    }
+  }
+
+  "Self Powers" - {
+    "should find the last ten digits of the series 1^1 + 2^2 + ... + 1000^1000" in {
+      import Level02.Problem0048.lastDigitOfSelfPowerSum
+
+      lastDigitOfSelfPowerSum(10) shouldEqual "0405071317"
+    }
+  }
+
+  "Consecutive Prime Sum" - {
+    "should find the prime below a given limit that can be written as the sum of the most consecutive primes" in {
+      import Level02.Problem0050.sumOfConsecutivePrimes
+
+      sumOfConsecutivePrimes(100) shouldEqual 41
+      sumOfConsecutivePrimes(1000) shouldEqual 953
+    }
+  }
 }
