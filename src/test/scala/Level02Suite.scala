@@ -80,11 +80,46 @@ class Level02Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Integer Right Triangles" - {
+    "should find the perimeter length such that the number of Pythagorean triples are maximized" in {
+      import Level02.Problem0039.calcPerimeterWithMostPythagoreanTriples
+
+      val limit: Int = 130
+      calcPerimeterWithMostPythagoreanTriples(limit) shouldEqual 120
+    }
+  }
+
   "Champernowne's Constant" - {
     "should find the digits of Champernowne's constant" in {
       import Level02.Problem0040.champernownesConstantProduct
 
       champernownesConstantProduct(List(12)) shouldEqual 1
+    }
+  }
+
+  "Pandigital Prime" - {
+    "should find the largest k-digit pandigital prime" in {
+      import Level02.Problem0041.largestPandigitalPrime
+
+      val limit: Int = 2200
+      largestPandigitalPrime(limit) shouldEqual 2143
+    }
+  }
+
+  "Coded Triangle Numbers" - {
+    "should find the number of encoded triangle numbers" in {
+      import Level02.Problem0042.calcNumberOfTriangleWords
+
+      val words: List[String] = List("A", "B", "D", "SKY")
+      calcNumberOfTriangleWords(words) shouldEqual 2
+    }
+  }
+
+  "Triangular, Pentagonal, and Hexagonal" - {
+    "should find the next triangle number that is also pentagonal and hexagonal" in {
+      import Level02.Problem0045.findHexagonalPentagonalNumber
+
+      findHexagonalPentagonalNumber(1, 1) shouldEqual 40755
     }
   }
 
