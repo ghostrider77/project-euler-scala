@@ -44,7 +44,7 @@ object Problem0054 {
   sealed trait Rank
   private case object RoyalFlush extends Rank
   private case class StraightFlush(highest: Int) extends Rank
-  private case class FourOfAKind(value: Int, high: Int) extends Rank
+  private case class FourOfAKind(four: Int) extends Rank
   private case class FullHouse(three: Int, pair: Int) extends Rank
   private case class Flush(high: Int) extends Rank
   private case class Straight(highest: Int) extends Rank
@@ -61,17 +61,17 @@ object Problem0054 {
         case (StraightFlush(h1), StraightFlush(h2)) => h1.compare(h2)
         case (StraightFlush(_), RoyalFlush) => -1
         case (StraightFlush(_), _) => 1
-        case (FourOfAKind(v1, _), FourOfAKind(v2, _)) => v1.compare(v2)
-        case (FourOfAKind(_, _), RoyalFlush | StraightFlush(_)) => -1
-        case (FourOfAKind(_, _), _) => 1
+        case (FourOfAKind(v1), FourOfAKind(v2)) => v1.compare(v2)
+        case (FourOfAKind(_), RoyalFlush | StraightFlush(_)) => -1
+        case (FourOfAKind(_), _) => 1
         case (FullHouse(t1, _), FullHouse(t2, _)) => t1.compare(t2)
-        case (FullHouse(_, _), RoyalFlush | StraightFlush(_) | FourOfAKind(_, _)) => -1
+        case (FullHouse(_, _), RoyalFlush | StraightFlush(_) | FourOfAKind(_)) => -1
         case (FullHouse(_, _), _) => 1
         case (Flush(h1), Flush(h2)) => h1.compare(h2)
-        case (Flush(_), RoyalFlush | StraightFlush(_) | FourOfAKind(_, _) | FullHouse(_, _)) => -1
+        case (Flush(_), RoyalFlush | StraightFlush(_) | FourOfAKind(_) | FullHouse(_, _)) => -1
         case (Flush(_), _) => 1
         case (Straight(h1), Straight(h2)) => h1.compare(h2)
-        case (Straight(_), RoyalFlush | StraightFlush(_) | FourOfAKind(_, _) | FullHouse(_, _) | Flush(_)) => -1
+        case (Straight(_), RoyalFlush | StraightFlush(_) | FourOfAKind(_) | FullHouse(_, _) | Flush(_)) => -1
         case (Straight(_), _) => 1
         case (ThreeOfAKind(v1), ThreeOfAKind(v2)) => v1.compare(v2)
         case (ThreeOfAKind(_), TwoPairs(_, _, _) | OnePair(_, _) | HighCard(_)) => 1
@@ -97,12 +97,12 @@ object Problem0054 {
     val rank: Rank =
       val values: List[Int] = cards.map(_.value).sorted(Ordering[Int].reverse)
       val aceReplaced: List[Int] = values.map(v => if v == 14 then 1 else v).sorted(Ordering[Int].reverse)
-      val suits: Set[Suit] = cards.map(_.suit).toSet
+      val nrSuits: Int = cards.map(_.suit).distinct.length
       val consecutiveDifferences: List[Int] = values.sliding(2).collect{ case List(a, b) => a - b }.toList
       val counts: List[(Int, Int)] =
         values.groupMapReduce(identity)(_ => 1)(_ + _).toList.sortBy{ (_, count) => count }(Ordering[Int].reverse)
 
-      if suits.size == 1 then
+      if nrSuits == 1 then
         if values == List(14, 13, 12, 11, 10) then RoyalFlush
         else if consecutiveDifferences.forall(_ == 1) then StraightFlush(values.head)
         else if aceReplaced == List(5, 4, 3, 2, 1) then StraightFlush(5)
@@ -110,7 +110,7 @@ object Problem0054 {
       else if consecutiveDifferences.forall(_ == 1) then Straight(values.head)
       else if aceReplaced == List(5, 4, 3, 2, 1) then Straight(5)
       else counts match
-        case List((v, 4), (h, 1)) => FourOfAKind(v, h)
+        case (v, 4) :: _ => FourOfAKind(v)
         case List((three, 3), (two, 2)) => FullHouse(three, two)
         case (three, 3) :: _ => ThreeOfAKind(three)
         case List((p1, 2), (p2, 2), (h, 1)) => TwoPairs(p1 max p2, p1 min p2, h)
