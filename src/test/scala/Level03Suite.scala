@@ -44,4 +44,14 @@ class Level03Suite extends AnyFreeSpec with Matchers {
       calcMaximalDigitSum(5) shouldEqual 13
     }
   }
+
+  "Square Root Convergents" - {
+    "should calculate the convergents of sqrt{2} where the nominator has more digits" in {
+      import Level03.Problem0057.countConvergentsWithLargeNominators
+
+      val limit: Int = 8
+      countConvergentsWithLargeNominators(limit - 1) shouldEqual 0
+      countConvergentsWithLargeNominators(limit) shouldEqual 1
+    }
+  }
 }
