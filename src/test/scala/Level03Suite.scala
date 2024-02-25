@@ -54,4 +54,12 @@ class Level03Suite extends AnyFreeSpec with Matchers {
       countConvergentsWithLargeNominators(limit) shouldEqual 1
     }
   }
+
+  "Spiral Primes" - {
+    "should return the side length of the spiral pattern when the ratio of primes in the diagonals are small" in {
+      import Level03.Problem0058.diagonalPrimes
+
+      diagonalPrimes(0.56) shouldEqual 5
+    }
+  }
 }
