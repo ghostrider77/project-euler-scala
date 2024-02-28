@@ -62,4 +62,12 @@ class Level03Suite extends AnyFreeSpec with Matchers {
       diagonalPrimes(0.56) shouldEqual 5
     }
   }
+
+  "Prime Pair Sets" - {
+    "should find the lowest sum for a set of n primes for which any two primes produce another prime" in {
+      import Level03.Problem0060.findPrimePairSetWithLowestSum
+
+      findPrimePairSetWithLowestSum(4) shouldEqual 792
+    }
+  }
 }
