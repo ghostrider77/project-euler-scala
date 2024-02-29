@@ -22,7 +22,7 @@ object Problem0060 {
     primes
       .filter(isCompatible(p, _))
       .combinations(n - 1)
-      .filter(_.combinations(2).collect{ case List(a, b) => (a, b) }.forall((a, b) => isCompatible(a, b)))
+      .filter(_.combinations(2).collect{ case List(a, b) => (a, b) }.forall(isCompatible))
       .map(cs => p :: cs)
       .toList
 
