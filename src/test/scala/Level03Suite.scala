@@ -70,4 +70,13 @@ class Level03Suite extends AnyFreeSpec with Matchers {
       findPrimePairSetWithLowestSum(4) shouldEqual 792
     }
   }
+
+  "Digit Factorial Chains" - {
+    "should retrieve the length of the non-repeating chain" in {
+      import Level03.Problem0074.calcFactorialChainLength
+
+      calcFactorialChainLength(145) shouldEqual 1
+      calcFactorialChainLength(69) shouldEqual 5
+    }
+  }
 }
