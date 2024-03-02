@@ -3,7 +3,7 @@ package Level03
 import scala.annotation.tailrec
 
 object Problem0074 {
-  private def Factorials: Vector[Int] = (1 to 9).scanLeft(1)(_ * _).toVector
+  private val Factorials: Vector[Int] = (1 to 9).scanLeft(1)(_ * _).toVector
 
   def calcFactorialChainLength(n: Int): Int =
     @tailrec
