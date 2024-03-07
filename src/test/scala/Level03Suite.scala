@@ -71,6 +71,14 @@ class Level03Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Counting Fractions" - {
+    "should calculate the number of proper reduced fractions" in {
+      import Level03.Problem0072.nrProperReducedFractions
+
+      nrProperReducedFractions(8) shouldEqual 21
+    }
+  }
+
   "Counting Fractions in a Range" - {
     "should retrieve the number of fractions in the sorted set of reduced proper fractions between 1/3 and 1/2" in {
       import Level03.Problem0073.calcNrReducedFractionsInRange
