@@ -71,6 +71,14 @@ class Level03Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Totient Maximum" - {
+    "should calculate n for which n / phi(n) is the largest" in {
+      import Level03.Problem0069.calcTotientMaximum
+
+      calcTotientMaximum(10) shouldEqual 6
+    }
+  }
+
   "Counting Fractions" - {
     "should calculate the number of proper reduced fractions" in {
       import Level03.Problem0072.nrProperReducedFractions
