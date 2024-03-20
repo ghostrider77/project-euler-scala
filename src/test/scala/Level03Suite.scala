@@ -79,6 +79,15 @@ class Level03Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Ordered Fractions" - {
+    "should find the numerator of the fraction immediately to the left of 3/7 for denominators up to a given limit" in {
+      import Level03.Problem0071.orderedFractions
+
+      val limit: Int = 8
+      orderedFractions(limit) shouldEqual 2
+    }
+  }
+
   "Counting Fractions" - {
     "should calculate the number of proper reduced fractions" in {
       import Level03.Problem0072.nrProperReducedFractions

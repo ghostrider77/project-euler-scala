@@ -13,7 +13,7 @@ object Problem0070 {
     }
     phiValues.toVector
 
-  private def calcMinimumTotitentQuotient(limit: Int): Int =
+  private def calcMinimumTotientQuotient(limit: Int): Int =
     def isPermutation(n: Int, m: Int): Boolean =
       n.toString.sorted == m.toString.sorted
 
@@ -28,6 +28,6 @@ object Problem0070 {
 
   def main(args: Array[String]): Unit =
     val limit: Int = 10000000
-    val result: Int = calcMinimumTotitentQuotient(limit)
+    val result: Int = calcMinimumTotientQuotient(limit)
     println(result)
 }
