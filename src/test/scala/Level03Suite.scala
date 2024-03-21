@@ -112,4 +112,12 @@ class Level03Suite extends AnyFreeSpec with Matchers {
       calcFactorialChainLength(69) shouldEqual 5
     }
   }
+
+  "Singular Integer Right Triangles" - {
+    "should retrieve the number of perimeters where a unique integer sided right angle triangle be formed" in {
+      import Level03.Problem0075.singularIntegerRightTriangle
+
+      singularIntegerRightTriangle(50) shouldEqual 6
+    }
+  }
 }
