@@ -71,6 +71,15 @@ class Level03Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Maximum Path Sum II" - {
+    "should find the maximum total from top to bottom of a triangle grid" in {
+      import Level03.Problem0067.calcMaxPathSum
+
+      val grid: Vector[Vector[Int]] = Vector(Vector(3), Vector(7, 4), Vector(2, 4, 6), Vector(8, 5, 9, 3))
+      calcMaxPathSum(grid) shouldEqual 23
+    }
+  }
+
   "Totient Maximum" - {
     "should calculate n for which n / phi(n) is the largest" in {
       import Level03.Problem0069.calcTotientMaximum
