@@ -2,6 +2,14 @@ import org.scalatest.freespec.AnyFreeSpec
 import org.scalatest.matchers.should.Matchers
 
 class Level03Suite extends AnyFreeSpec with Matchers {
+  "Prime Digit Replacements" - {
+    "should find the smallest prime from an eight prime value family" in {
+      import Level03.Problem0051.smallestPrimeFromASameDigitReplacementFamily
+
+      smallestPrimeFromASameDigitReplacementFamily(6) shouldEqual 13
+    }
+  }
+
   "Combinatoric Selections" - {
     "should calculate the number of binomial coefficients exceeding a given threshold" in {
       import Level03.Problem0053.calcNumberOfLargeBinomialCoefficient
