@@ -79,6 +79,14 @@ class Level03Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Cubic Permutations" - {
+    "should find the smallest cube for which exactly five permutations of its digits are cube" in {
+      import Level03.Problem0062.findSmallestCube
+
+      findSmallestCube(3) shouldEqual 41063625L
+    }
+  }
+
   "Maximum Path Sum II" - {
     "should find the maximum total from top to bottom of a triangle grid" in {
       import Level03.Problem0067.calcMaxPathSum
