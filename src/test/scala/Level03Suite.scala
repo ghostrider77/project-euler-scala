@@ -87,6 +87,14 @@ class Level03Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Odd Period Square Roots" - {
+    "should count the numbers with and odd length of continued fraction expansion of their square roots" in {
+      import Level03.Problem0064.calcNrOfOddPeriodSquareRootConvergents
+
+      calcNrOfOddPeriodSquareRootConvergents(13) shouldEqual 4
+    }
+  }
+
   "Maximum Path Sum II" - {
     "should find the maximum total from top to bottom of a triangle grid" in {
       import Level03.Problem0067.calcMaxPathSum
