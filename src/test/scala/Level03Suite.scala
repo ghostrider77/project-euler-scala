@@ -95,6 +95,14 @@ class Level03Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Convergents of e" - {
+    "should calculate the sum of the digits in the nominator of the nth convergent of e" in {
+      import Level03.Problem0065.sumOfConvergentNumeratorDigits
+
+      sumOfConvergentNumeratorDigits(10) shouldEqual 17
+    }
+  }
+
   "Maximum Path Sum II" - {
     "should find the maximum total from top to bottom of a triangle grid" in {
       import Level03.Problem0067.calcMaxPathSum
