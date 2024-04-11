@@ -103,6 +103,14 @@ class Level03Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Diophantine Equation" - {
+    "should find the minimal solutions of x for which the largest value of x is obtained." in {
+      import Level03.Problem0066.findMaximalFundamentalSolution
+
+      findMaximalFundamentalSolution(7) shouldEqual 5
+    }
+  }
+
   "Maximum Path Sum II" - {
     "should find the maximum total from top to bottom of a triangle grid" in {
       import Level03.Problem0067.calcMaxPathSum
