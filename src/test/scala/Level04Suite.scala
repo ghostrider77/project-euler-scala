@@ -22,6 +22,15 @@ class Level04Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Largest Exponential" - {
+    "should find the 1-based index of the largest exponential" in {
+      import Level04.Problem0099.{Number, findIndexOfLargestNumber}
+
+      val numbers: List[Number] = List(Number(2, 3), Number(3, 2), Number(8, 1))
+      findIndexOfLargestNumber(numbers) shouldEqual 2
+    }
+  }
+
   "Arranged Probability" - {
     "should find the number of blue disk where the probability of taking two blue discs at random is 50%" in {
       import Level04.Problem0100.solveNegativePellEquation
