@@ -11,6 +11,15 @@ class Level04Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Prime Summations" - {
+    "should find the first value which can be written as the sum of primes in over `k` different ways" in {
+      import Level04.Problem0077.primeSummation
+
+      val k: Int = 4
+      primeSummation(k) shouldEqual 10
+    }
+  }
+
   "Su Doku" - {
     "should find the top left 3-digit value for a uniquely solvable sudoku puzzle" in {
       import Level04.Problem0096.{Puzzle, readPuzzle, solveSudokuPuzzles}

@@ -15,7 +15,6 @@ object Problem0076 {
     }
     partitionMatrix(n - 2)(n - 1)
 
-
   def main(args: Array[String]): Unit =
     val n: Int = 100
     val result: Int = calcNumberOfSums(n)
