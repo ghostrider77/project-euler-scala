@@ -2,6 +2,15 @@ import org.scalatest.freespec.AnyFreeSpec
 import org.scalatest.matchers.should.Matchers
 
 class Level04Suite extends AnyFreeSpec with Matchers {
+  "Counting Summations" - {
+    "should find the number of ways `n` be written as a sum of at least two positive integers" in {
+      import Level04.Problem0076.calcNumberOfSums
+
+      val n: Int = 5
+      calcNumberOfSums(n) shouldEqual 6
+    }
+  }
+
   "Su Doku" - {
     "should find the top left 3-digit value for a uniquely solvable sudoku puzzle" in {
       import Level04.Problem0096.{Puzzle, readPuzzle, solveSudokuPuzzles}
