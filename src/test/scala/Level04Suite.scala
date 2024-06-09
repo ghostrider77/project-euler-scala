@@ -20,6 +20,15 @@ class Level04Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Coin Partitions" - {
+    "should find the smallest value of `n` such that the number of partitions of `n` items is divisible by `m`" in {
+      import Level04.Problem0078.calcSmallestValue
+
+      val m: Int = 7
+      calcSmallestValue(m) shouldEqual 5
+    }
+  }
+
   "Su Doku" - {
     "should find the top left 3-digit value for a uniquely solvable sudoku puzzle" in {
       import Level04.Problem0096.{Puzzle, readPuzzle, solveSudokuPuzzles}
