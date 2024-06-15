@@ -2,6 +2,17 @@ import org.scalatest.freespec.AnyFreeSpec
 import org.scalatest.matchers.should.Matchers
 
 class Level04Suite extends AnyFreeSpec with Matchers {
+  object Data {
+    val matrix: Vector[Vector[Int]] =
+      Vector(
+        Vector(131, 673, 234, 103, 18),
+        Vector(201, 96, 342, 965, 150),
+        Vector(630, 803, 746, 422, 111),
+        Vector(537, 699, 497, 121, 956),
+        Vector(805, 732, 524, 37, 331)
+      )
+  }
+
   "Counting Summations" - {
     "should find the number of ways `n` be written as a sum of at least two positive integers" in {
       import Level04.Problem0076.calcNumberOfSums
@@ -26,6 +37,15 @@ class Level04Suite extends AnyFreeSpec with Matchers {
 
       val m: Int = 7
       calcSmallestValue(m) shouldEqual 5
+    }
+  }
+
+  "Path Sum: Two Ways" - {
+    "should find the minimal path sum by only moving right and down" in {
+      import Level04.Problem0081.calcShortestPath
+      import Data.matrix
+
+      calcShortestPath(matrix) shouldEqual 2427
     }
   }
 
