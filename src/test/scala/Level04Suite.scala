@@ -49,6 +49,16 @@ class Level04Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Path Sum: Three Ways" - {
+    "should find the minimal path sum by only moving right, up and down" in {
+      import Level04.Problem0082.{Grid, calcShortestPath}
+      import Data.matrix
+
+      val grid = Grid(matrix, matrix.length, matrix.head.length)
+      calcShortestPath(grid) shouldEqual 994
+    }
+  }
+
   "Su Doku" - {
     "should find the top left 3-digit value for a uniquely solvable sudoku puzzle" in {
       import Level04.Problem0096.{Puzzle, readPuzzle, solveSudokuPuzzles}
