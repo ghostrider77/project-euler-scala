@@ -30,8 +30,7 @@ object Problem0083 {
 
   def calcShortestPath(grid: Grid): Int =
     val Grid(matrix, nrRows, nrCols) = grid
-    val heap: Heap[Distance] = Heap()
-    heap.enqueue(Distance(Cell(0, 0), matrix(0)(0)))
+    val heap: Heap[Distance] = Heap(Distance(Cell(0, 0), matrix(0)(0)))
 
     def isShorter(distances: Map[Cell, Double], dist: Double, v: Cell): Boolean =
       dist + matrix(v.x)(v.y) < distances.getOrElse(v, Double.PositiveInfinity)
