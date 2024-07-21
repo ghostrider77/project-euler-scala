@@ -50,11 +50,15 @@ object Problem0084 {
       .toList
       .sortBy((_, count) => count)(Ordering[Int].reverse)
       .take(3)
-      .map{ case (id, _) => f"$id%02d"}
+      .map{ case (id, _) => f"$id%02d" }
       .mkString
 
   def playMonopoly(diceSides: Int, n: Int): String =
     val dice = Dice(diceSides)
+
+    def update(value: Option[Int]): Option[Int] = value match
+      case None => Some(1)
+      case Some(v) => Some(v + 1)
 
     def playRound(state: GameState): GameState =
       val d1: Int = rollTheDice(dice)
@@ -63,9 +67,6 @@ object Problem0084 {
       val position: Int = (state.position + d1 + d2) % BoardSize
       val (nextPosition, nextCcCard, nextChanceCard): (Int, Int, Int) =
         adjustPosition(position, counter, state.ccCard, state.chanceCard)
-      def update(value: Option[Int]): Option[Int] = value match
-        case None => Some(1)
-        case Some(v) => Some(v + 1)
       val updatedVisit: Map[Int, Int] = state.visited.updatedWith(nextPosition)(update)
       GameState(nextPosition, nextCcCard, nextChanceCard, counter, updatedVisit)
 
