@@ -78,6 +78,15 @@ class Level04Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Prime Power Triples" - {
+    "should find the numbers that can be expressed as the sum of a prime square, prime cube and prime fourth power" in {
+      import Level04.Problem0087.numberOfPrimePowerSums
+
+      val limit: Int = 50
+      numberOfPrimePowerSums(limit) shouldEqual 4
+    }
+  }
+
   "Su Doku" - {
     "should find the top left 3-digit value for a uniquely solvable sudoku puzzle" in {
       import Level04.Problem0096.{Puzzle, readPuzzle, solveSudokuPuzzles}
