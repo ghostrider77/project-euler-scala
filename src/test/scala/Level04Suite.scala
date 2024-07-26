@@ -69,6 +69,15 @@ class Level04Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Cuboid Route" - {
+    "should find the least value such that the number of solutions first exceeds one million" in {
+      import Level04.Problem0086.smallestDimensionForCuboidRoutes
+
+      val limit: Int = 2000
+      smallestDimensionForCuboidRoutes(limit) shouldEqual 100
+    }
+  }
+
   "Su Doku" - {
     "should find the top left 3-digit value for a uniquely solvable sudoku puzzle" in {
       import Level04.Problem0096.{Puzzle, readPuzzle, solveSudokuPuzzles}
