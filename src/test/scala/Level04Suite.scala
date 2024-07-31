@@ -87,6 +87,15 @@ class Level04Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Right Triangles with Integer Coordinates" - {
+    "should find the number of right triangles with integer coordinates" in {
+      import Level04.Problem0091.calcNumberOfRightTriangles
+
+      val limit: Int = 2
+      calcNumberOfRightTriangles(limit) shouldEqual 14
+    }
+  }
+
   "Su Doku" - {
     "should find the top left 3-digit value for a uniquely solvable sudoku puzzle" in {
       import Level04.Problem0096.{Puzzle, readPuzzle, solveSudokuPuzzles}

@@ -11,10 +11,10 @@ object Problem0087 {
   def numberOfPrimePowerSums(n: Int): Int =
     val limit: Int = math.sqrt(n).toInt
     val primes: List[Int] = 2 :: (3 to limit by 2).filter(isPrime).toList
-    val primePowerSums: Set[Long] = for {
+    val primePowerSums: Set[Int] = for {
       p2 <- primes.iterator.map(p => p * p).toSet
-      p3 <- primes.iterator.map(p => math.pow(p, 3).toLong).filter(_ < n)
-      p4 <- primes.iterator.map(p => math.pow(p, 4).toLong).filter(_ < n)
+      p3 <- primes.iterator.map(p => math.pow(p, 3).toInt).takeWhile(_ < n)
+      p4 <- primes.iterator.map(p => math.pow(p, 4).toInt).takeWhile(_ < n)
       if p2 + p3 + p4 < n
     } yield p2 + p3 + p4
     primePowerSums.size
