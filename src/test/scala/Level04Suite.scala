@@ -96,6 +96,15 @@ class Level04Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Amicable Chains" - {
+    "should find the smallest member of the longest amicable chain with no element exceeding a given limit" in {
+      import Level04.Problem0095.longestAmicableChain
+
+      val limit: Int = 16000
+      longestAmicableChain(limit) shouldEqual 12496
+    }
+  }
+
   "Su Doku" - {
     "should find the top left 3-digit value for a uniquely solvable sudoku puzzle" in {
       import Level04.Problem0096.{Puzzle, readPuzzle, solveSudokuPuzzles}
