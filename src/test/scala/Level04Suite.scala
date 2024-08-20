@@ -96,6 +96,15 @@ class Level04Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Almost Equilateral Triangles" - {
+    "should find the sum of the perimeters of all almost equilateral triangles with integral side lengths and area" in {
+      import Level04.Problem0094.calcPerimeterSum
+
+      val limit: Int = 20
+      calcPerimeterSum(limit) shouldEqual 16
+    }
+  }
+
   "Amicable Chains" - {
     "should find the smallest member of the longest amicable chain with no element exceeding a given limit" in {
       import Level04.Problem0095.longestAmicableChain
