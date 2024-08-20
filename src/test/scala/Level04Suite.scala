@@ -87,6 +87,14 @@ class Level04Suite extends AnyFreeSpec with Matchers {
     }
   }
 
+  "Roman Numerals" - {
+    "should find the number of characters saved by writing each of these in their minimal form" in {
+      import Level04.Problem0089.calcSavedCharacters
+
+      calcSavedCharacters(Iterator("CCCLL")) shouldEqual 3
+    }
+  }
+
   "Right Triangles with Integer Coordinates" - {
     "should find the number of right triangles with integer coordinates" in {
       import Level04.Problem0091.calcNumberOfRightTriangles
