@@ -4,13 +4,6 @@ import scala.annotation.tailrec
 import scala.collection.mutable.Map as MutableMap
 
 object Problem0012 {
-  private def isPrime(n: Int): Boolean =
-    if n == 2 then true
-    else if n == 1 || n % 2 == 0 then false
-    else
-      val limit: Int = math.sqrt(n).toInt
-      (3 to limit by 2).forall(k => n % k != 0)
-
   private def extractPrimeFactor(n: Int, p: Int, factorization: MutableMap[Int, Int]): Int =
     @tailrec
     def loop(m: Int, exponent: Int): Int =
